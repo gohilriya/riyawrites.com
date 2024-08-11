@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title - Riya Writes</title>
+    <link rel="stylesheet" href="Read more1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <article>
+        <header>
+            <h2>Bruta Figura
+            </h2>
+            <p class="meta">Published on August 6, 2024</p>
+        </header>
+        <figure>
+            <img src="./images/blog1.png.png" alt="Article Image">
+            <figcaption> “There are no mistakes or failures, only lessons.”
+            </figcaption>
+        </figure>
+        <div class="article-content">
+            <p>In life, mistakes are inevitable. They are not just errors but opportunities to learn and grow. Owning your mistakes and embracing them can be a powerful catalyst for personal and professional development. The phrase "Bruta figura," which means "ugly figure" in Italian, perfectly encapsulates the often messy and uncomfortable process of making mistakes. However, these missteps can be inspiring and pave the way for bigger and better things.
+            </p>
+            <p>One of the fundamental truths about mistakes is that they provide valuable lessons. If you're not going to make mistakes, acknowledge them, and understand how and where you went wrong, then what's the point in failing at all? Mistakes serve as a crucial feedback mechanism, helping us refine our strategies and approaches. By analyzing our errors, we can identify weaknesses and work on them, turning potential failures into stepping stones toward success.</p>
+            <p>The journey of personal growth is significantly shaped by the consequences of our choices. I am who I am and where I am today thanks to the consequences of my choices and my choices only. This statement underscores the importance of taking ownership of our actions. Every decision, whether right or wrong, contributes to our development. By accepting responsibility for our choices, we empower ourselves to learn and improve continuously.
+            </p>
+            <p>Being responsible for our goals, ideas, and dreams means being equally responsible for our failures. When we own up to our mistakes, we demonstrate integrity and maturity. It shows that we are not afraid to face the repercussions of our actions. More importantly, it sets the stage for genuine success. Only by acknowledging our failures can we take meaningful steps toward achieving our ambitions. One day, we can truly be responsible for our success from our past missteps.
+            </p>
+            <p>Life is truly 10% what happens to us and 90% how we react to it. This profound statement highlights the power of perspective and attitude. While we cannot control every event that occurs, we can control our responses. Our reactions to challenges and failures significantly influence our overall trajectory. By adopting a positive and proactive mindset, we can turn setbacks into opportunities for growth.
+            </p>
+            <p>In conclusion, mistakes are not just stumbling blocks; they are stepping stones on the path to success. Embracing our errors, learning from them, and taking responsibility for our actions are essential components of personal and professional development. By owning our mistakes, we can transform failures into valuable lessons and pave the way for a brighter future. Remember, life is not about avoiding mistakes but about learning how to navigate and grow from them.
+            </p>
+            <p>—Embrace them.
+            </p>
+        </div>
+        <footer>
+            <div class="social">
+                <button class="like-btn" onclick="toggleLike()">
+                    <i class="fas fa-heart"></i>
+                    <span id="like-count"></span>
+                </button>
+                <button class="share-btn" onclick="shareArticle()">
+                    <i class="fas fa-share"></i>
+                    <span></span>
+                </button>
+            </div>
+            
+            
+
+            <script>
+                let likeCount = 0;
+                let commentCount = 0;
+                const likeButton = document.querySelector('.like-btn');
+                const likeCountElement = document.getElementById('like-count');
+                const commentButton = document.querySelector('.comment-btn');
+                const commentSection = document.getElementById('comment-section');
+                const commentForm = document.getElementById('comment-form');
+                const commentInput = document.getElementById('comment-input');
+                const commentsList = document.getElementById('comments-list');
+                const commentCountElement = document.getElementById('comment-count');
+        
+                function toggleLike() {
+                    likeCount++;
+                    likeCountElement.textContent = `${likeCount} Likes`;
+                }
+        
+                function shareArticle() {
+                    // Implement sharing functionality (e.g., using Web Share API)
+                    if (navigator.share) {
+                        navigator.share({
+                            title: document.title,
+                            url: window.location.href
+                        }).catch(console.error);
+                    } else {
+                        alert('Sharing is not supported in this browser.');
+                    }
+                }
+        
+                function toggleCommentSection() {
+                    commentSection.classList.toggle('active');
+                }
+        
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const newComment = commentInput.value.trim();
+                    if (newComment) {
+                        const commentElement = document.createElement('div');
+                        commentElement.className = 'comment';
+                        commentElement.textContent = newComment;
+                        commentsList.appendChild(commentElement);
+                        commentInput.value = '';
+                        commentCount++;
+                        commentCountElement.textContent = `${commentCount} Comments`;
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        </footer>
+    </article>
+   
+    </article>
+</body>
+</html>

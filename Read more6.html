@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title - Riya Writes</title>
+    <link rel="stylesheet" href="Read more6.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <article>
+        <header>
+            <h2>You’re Still Alive: Your Life Has Purpose, and You’re Meant for Greatness
+
+            </h2>
+            <p class="meta">Published on August 6, 2024</p>
+        </header>
+        <figure>
+            <img src="./images/blog6.png.png" alt="Article Image">
+            <figcaption> 
+            </figcaption>
+        </figure>
+        <div class="article-content">
+           <p>In the quiet moments of introspection or during the toughest times, it’s easy to question the purpose of our lives. But if you’re still here, navigating through life, it’s a powerful sign that your existence has meaning and that you’re destined for greatness.</p>
+           <p>*“You’re still alive, that means your life has purpose. You were meant for greatness.”** This simple truth is a reminder that every day you wake up and continue to push forward is a testament to your inherent worth and potential.
+        </p>
+           <p>Think about the hurdles you've faced and the challenges you've overcome. Each one is not just an obstacle but a part of your journey, shaping you into the person you are becoming. These experiences, no matter how difficult, are integral to the larger story of your life—a story that is leading you towards your true purpose.
+        </p>
+           <p>
+            Greatness is often misunderstood as achieving fame or wealth, but it’s much more profound. It lies in the realization of your own potential and in the way you impact those around you. Your purpose may not always be obvious, but it’s woven into the fabric of your everyday actions and choices. It’s in the way you support others, pursue your passions, and strive to make a positive difference.
+            </p>
+           <p>Consider those who have made significant marks on the world. Many faced their own doubts and struggles, yet they pressed on because they believed in their purpose and their capacity to contribute something meaningful. You possess the same potential. Your journey, with all its trials and triumphs, is molding you into someone who can achieve remarkable things.
+        </p>
+           <p>Purpose is not a destination to be reached but a journey to be embraced. Each day you live is a chance to grow, to inspire, and to achieve. The obstacles you face are not there to deter you but to strengthen and prepare you for the greatness you are capable of.
+        </p>
+           <p>So, whenever you doubt your path or feel overwhelmed, remember this: you are here for a reason. Your life is imbued with purpose, and you are destined for greatness. Embrace each moment of your journey, knowing that every step you take is leading you toward realizing your full potential. Your very existence is a testament to the extraordinary possibilities that lie ahead.
+        </p>
+
+        </div>
+        <footer>
+            <div class="social">
+                <button class="like-btn" onclick="toggleLike()">
+                    <i class="fas fa-heart"></i>
+                    <span id="like-count"></span>
+                </button>
+                <button class="share-btn" onclick="shareArticle()">
+                    <i class="fas fa-share"></i>
+                    <span></span>
+                </button>
+            </div>
+            
+            
+
+            <script>
+                let likeCount = 0;
+                let commentCount = 0;
+                const likeButton = document.querySelector('.like-btn');
+                const likeCountElement = document.getElementById('like-count');
+                const commentButton = document.querySelector('.comment-btn');
+                const commentSection = document.getElementById('comment-section');
+                const commentForm = document.getElementById('comment-form');
+                const commentInput = document.getElementById('comment-input');
+                const commentsList = document.getElementById('comments-list');
+                const commentCountElement = document.getElementById('comment-count');
+        
+                function toggleLike() {
+                    likeCount++;
+                    likeCountElement.textContent = `${likeCount} Likes`;
+                }
+        
+                function shareArticle() {
+                    // Implement sharing functionality (e.g., using Web Share API)
+                    if (navigator.share) {
+                        navigator.share({
+                            title: document.title,
+                            url: window.location.href
+                        }).catch(console.error);
+                    } else {
+                        alert('Sharing is not supported in this browser.');
+                    }
+                }
+        
+                function toggleCommentSection() {
+                    commentSection.classList.toggle('active');
+                }
+        
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const newComment = commentInput.value.trim();
+                    if (newComment) {
+                        const commentElement = document.createElement('div');
+                        commentElement.className = 'comment';
+                        commentElement.textContent = newComment;
+                        commentsList.appendChild(commentElement);
+                        commentInput.value = '';
+                        commentCount++;
+                        commentCountElement.textContent = `${commentCount} Comments`;
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        </footer>
+    </article>
+   
+    </article>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title - Riya Writes</title>
+    <link rel="stylesheet" href="Read more5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <article>
+        <header>
+            <h2> We Don’t Rise to the Level of Our Goals; We Fall to the Level of Our System
+
+            </h2>
+            <p class="meta"></p>
+        </header>
+        <figure>
+            <img src="./images/blog5.png.png" alt="Article Image">
+            <figcaption> 
+            </figcaption>
+        </figure>
+        <div class="article-content">
+           <p>In the quest to achieve great things, we often set ambitious goals, envisioning ourselves at the pinnacle of success. Yet, the truth is, while goals set the direction, it’s the systems we put in place that determine whether we reach them. James Clear captures this perfectly in his insightful quote: **“We don’t rise to the level of our goals; we fall to the level of our systems.”** 
+        </p>
+           <p>Goals are essential for providing direction and motivation, but they can sometimes be too abstract or distant to drive consistent action. Without a concrete system to support our goals, they can remain just lofty aspirations. Imagine setting a goal to “become fit” without a structured plan. Without a daily routine that includes specific workouts and dietary habits, this goal remains out of reach. In contrast, a system—a regular exercise schedule, healthy eating habits, and measurable progress checks—turns the goal into actionable steps. It’s through these consistent actions that real progress is made.
+        </p>
+           <p>A key benefit of focusing on systems is that they emphasize the processes over the outcomes. Goals can often lead to frustration if the results aren’t immediately visible, but systems shift the focus to daily actions. For instance, a writer aiming to publish a book might become overwhelmed by the end goal. However, by establishing a system that includes daily writing sessions, regular feedback, and a structured editing process, the focus moves to manageable tasks that gradually lead to the final goal. This process-oriented approach not only makes the goal seem more attainable but also ensures steady progress.</p>
+           <p>Moreover, systems provide the flexibility needed to adapt to changing circumstances. Life is unpredictable, and rigid goals can become obstacles when faced with unexpected challenges. A well-designed system, however, can adapt and evolve. If a business plan is disrupted, a flexible system allows for adjustments while keeping the overarching goal in sight. This adaptability helps maintain momentum despite setbacks.
+        </p>
+           <p>Resilience is another benefit of a strong system. While goals provide motivation, it’s the consistent effort driven by a system that builds resilience. Systems foster incremental improvements and celebrate small wins, which helps sustain motivation and perseverance. When encountering difficulties, the daily routines established by your system become a reliable framework that guides you through tough times, ensuring continued progress.
+
+           </p>
+           <p>Ultimately, while goals can provide short-term motivation, systems are key to achieving long-term success. Goals might inspire you to take the first step, but it’s the systems that ensure continued growth and improvement. By focusing on building robust systems, you create a foundation for sustained achievement. This approach transforms abstract aspirations into daily actions that align with your ambitions, making your goals more attainable.
+        </p>
+           <p>
+            In essence, the success of your endeavors isn’t solely determined by the goals you set but by the systems you implement. By prioritizing and refining these systems, you create a pathway to reach your goals, ensuring that your aspirations are met not just by chance, but through deliberate and consistent effort.
+            </p>
+            
+        </div>
+        <footer>
+            <div class="social">
+                <button class="like-btn" onclick="toggleLike()">
+                    <i class="fas fa-heart"></i>
+                    <span id="like-count"></span>
+                </button>
+                <button class="share-btn" onclick="shareArticle()">
+                    <i class="fas fa-share"></i>
+                    <span></span>
+                </button>
+            </div>
+            
+            
+
+            <script>
+                let likeCount = 0;
+                let commentCount = 0;
+                const likeButton = document.querySelector('.like-btn');
+                const likeCountElement = document.getElementById('like-count');
+                const commentButton = document.querySelector('.comment-btn');
+                const commentSection = document.getElementById('comment-section');
+                const commentForm = document.getElementById('comment-form');
+                const commentInput = document.getElementById('comment-input');
+                const commentsList = document.getElementById('comments-list');
+                const commentCountElement = document.getElementById('comment-count');
+        
+                function toggleLike() {
+                    likeCount++;
+                    likeCountElement.textContent = `${likeCount} Likes`;
+                }
+        
+                function shareArticle() {
+                    // Implement sharing functionality (e.g., using Web Share API)
+                    if (navigator.share) {
+                        navigator.share({
+                            title: document.title,
+                            url: window.location.href
+                        }).catch(console.error);
+                    } else {
+                        alert('Sharing is not supported in this browser.');
+                    }
+                }
+        
+                function toggleCommentSection() {
+                    commentSection.classList.toggle('active');
+                }
+        
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const newComment = commentInput.value.trim();
+                    if (newComment) {
+                        const commentElement = document.createElement('div');
+                        commentElement.className = 'comment';
+                        commentElement.textContent = newComment;
+                        commentsList.appendChild(commentElement);
+                        commentInput.value = '';
+                        commentCount++;
+                        commentCountElement.textContent = `${commentCount} Comments`;
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        </footer>
+    </article>
+   
+    </article>
+</body>
+</html>

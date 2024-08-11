@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title - Riya Writes</title>
+    <link rel="stylesheet" href="Read more2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <article>
+        <header>
+            <h2>ALL YOU HAVE TO DO IS START
+
+            </h2>
+            <p class="meta">Published on August 8, 2024</p>
+        </header>
+        <figure>
+            <img src="./images/blog2.png.png" alt="Article Image">
+            <figcaption> “You don't have to be great to start, but you have to start to be great.”
+            </figcaption>
+        </figure>
+        <div class="article-content">
+            <p>The journey to achieving our dreams often feels daunting, primarily because the initial step seems the hardest. We envision the end goal, the grand vision, and the numerous obstacles that may stand in our way. However, the most critical component of any journey is not in the grand planning or the elaborate strategy but in the simple act of starting.
+            </p>
+            <p>“All you have to do is start.” This seemingly straightforward advice holds profound significance. Starting is often the hardest part of any endeavor. It requires overcoming inertia, stepping out of your comfort zone, and facing the uncertainty of the unknown. Yet, this first step is also the most crucial one.
+            </p>
+            <p>Imagine standing at the edge of a vast ocean, looking out at the horizon. The idea of swimming to that distant point can be overwhelming. But once you take that first plunge into the water, you’re moving. With each stroke, you gain momentum and confidence. The same principle applies to any goal or project. The initial act of starting propels you forward and transforms your dreams from abstract ideas into tangible actions.
+            </p>
+            <p>Consider the stories of many successful individuals. They often began their journeys with humble beginnings and no certainty of success. J.K. Rowling started writing the Harry Potter series while struggling financially. Steve Jobs and Steve Wozniak began Apple in a garage with limited resources. Their successes didn’t come from grand plans or guaranteed outcomes but from the courage to start.
+            </p>
+            <p>
+                Starting is not about having everything perfectly figured out. It’s about taking action, even if it’s small and imperfect. The early stages of any project or goal are rarely smooth, and there will be mistakes and learning curves along the way. Embrace these as part of the process. The key is to begin, to make that first move, and to build from there.
+                </p>
+            <p>Every journey is a series of steps, and each step you take brings you closer to your destination. The path may not always be clear, and the road may be filled with challenges. But starting creates forward momentum and opens up opportunities for growth, learning, and eventual success.
+            </p>
+            <p>The fear of failure or the uncertainty of the future can often paralyze us. But by focusing on the very first step, you break down the overwhelming task into manageable actions. Each small step you take builds confidence and clarity, gradually making the journey less intimidating.
+
+            </p>
+            <p>
+                Remember, the most successful people are often those who dared to start despite the uncertainties. They took that initial leap of faith and allowed their actions to guide them. So, if you have a dream or a goal, don’t get caught up in the enormity of it. Simply start. Take that first step, however small it may be, and let the momentum carry you forward.
+                </p>
+                <p>Starting is the gateway to transformation. It’s the point where aspirations turn into reality and where potential begins to manifest. Embrace the power of the first step, and let it set you on a path of progress and achievement. All you have to do is start.
+                </p>
+        </div>
+        <footer>
+            <div class="social">
+                <button class="like-btn" onclick="toggleLike()">
+                    <i class="fas fa-heart"></i>
+                    <span id="like-count"></span>
+                </button>
+                <button class="share-btn" onclick="shareArticle()">
+                    <i class="fas fa-share"></i>
+                    <span></span>
+                </button>
+            </div>
+            <div class="share-options">
+                <p class="title">share</p>
+                <div class="social-media">
+                    <button class="social-media-btn"><i class="far fa-folder-open"></i></button>
+                    <button class="social-media-btn"><i class="fab fa-whatsapp"></i></button>
+                    <button class="social-media-btn"><i class="fab fa-instagram"></i></button>
+                    <button class="social-media-btn"><i class="fab fa-twitter"></i></button>
+                    <button class="social-media-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button class="social-media-btn"><i class="fab fa-linkedin-in"></i></button>
+                </div>
+                <div class="link-container">
+                    <p class="link">file:///D:/Personal%20Blog%20Website/home.html</p>
+                    <button class="copy-btn">copy</button>
+                </div>
+            </div>
+            </div>
+
+            <script>
+                let likeCount = 0;
+                let commentCount = 0;
+                const likeButton = document.querySelector('.like-btn');
+                const likeCountElement = document.getElementById('like-count');
+                const commentButton = document.querySelector('.comment-btn');
+                const commentSection = document.getElementById('comment-section');
+                const commentForm = document.getElementById('comment-form');
+                const commentInput = document.getElementById('comment-input');
+                const commentsList = document.getElementById('comments-list');
+                const commentCountElement = document.getElementById('comment-count');
+        
+                function toggleLike() {
+                    likeCount++;
+                    likeCountElement.textContent = `${likeCount} Likes`;
+                }
+        
+                function shareArticle() {
+                    // Implement sharing functionality (e.g., using Web Share API)
+                    if (navigator.share) {
+                        navigator.share({
+                            title: document.title,
+                            url: window.location.href
+                        }).catch(console.error);
+                    } else {
+                        alert('Sharing is not supported in this browser.');
+                    }
+                }
+        
+                function toggleCommentSection() {
+                    commentSection.classList.toggle('active');
+                }
+        
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const newComment = commentInput.value.trim();
+                    if (newComment) {
+                        const commentElement = document.createElement('div');
+                        commentElement.className = 'comment';
+                        commentElement.textContent = newComment;
+                        commentsList.appendChild(commentElement);
+                        commentInput.value = '';
+                        commentCount++;
+                        commentCountElement.textContent = `${commentCount} Comments`;
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        </footer>
+    </article>
+   
+    </article>
+</body>
+</html>

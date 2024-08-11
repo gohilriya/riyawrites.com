@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title - Riya Writes</title>
+    <link rel="stylesheet" href="Read more4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <article>
+        <header>
+            <h2>Stop Trying to Fit In When You Are Born to Stand Out
+            </h2>
+            <p class="meta">Published on August 6, 2024</p>
+        </header>
+        <figure>
+            <img src="./images/blog4.png.png" alt="Article Image">
+            <figcaption> “Why follow the crowd when you can be leading it?.”
+            </figcaption>
+        </figure>
+        <div class="article-content">
+            <p>In a world that often values conformity and fitting in, the pressure to blend with the crowd can be overwhelming. Yet, there’s a profound truth that we often overlook: “Stop trying to fit in, when you are born to stand out.” This powerful statement challenges us to embrace our individuality and recognize that true fulfillment comes from being unapologetically ourselves.
+            </p>
+            <p>From a young age, many of us are taught to follow the crowd, adhere to social norms, and conform to expectations. Schools, workplaces, and even social circles can sometimes reinforce this idea, subtly encouraging us to blend in rather than showcase our unique qualities. But the essence of who we are—our passions, quirks, and talents—is what makes us extraordinary.
+            </p>
+            <p>Think about the trailblazers who have left an indelible mark on the world. They didn’t achieve greatness by fitting into a mold; they did so by breaking it. Albert Einstein’s eccentricity didn’t hinder his brilliance; it was a part of what made him a revolutionary thinker. Steve Jobs didn’t conform to traditional corporate norms; he challenged them to create innovations that transformed industries. Each of these individuals embraced their distinctiveness, and in doing so, they changed the world.</p>
+            <p>When you try to fit in, you often suppress aspects of your true self in favor of approval or acceptance. This can lead to a life of mediocrity, where your unique talents and perspectives remain untapped. By contrast, embracing your individuality allows you to unlock your full potential and make a genuine impact. It’s about recognizing that your unique qualities are not flaws but strengths that can drive creativity and innovation.</p>
+            <p>Standing out doesn’t always mean making grand gestures or seeking the spotlight. Sometimes, it’s simply about being true to yourself and letting your authenticity shine through. Whether it’s pursuing a passion project, expressing your unique opinions, or following an unconventional path, standing out is about making choices that align with your true self rather than conforming to external expectations.
+            </p>
+            <p>Remember, your individuality is a gift. The qualities that make you different are the ones that can set you apart and make you memorable. Instead of trying to fit into predefined roles or expectations, embrace who you are. Celebrate your uniqueness and let it guide you toward opportunities that resonate with your true self.
+            </p>
+            <p>In a world that often values uniformity, choosing to stand out can be daunting. But it’s in this choice that you’ll find the freedom to express yourself fully and the courage to pursue what truly matters to you. As you navigate your journey, remember: you were born to stand out. Embrace your individuality, and let it lead you to a life of authenticity and fulfillment.
+            </p>
+        </div>
+        <footer>
+            <div class="social">
+                <button class="like-btn" onclick="toggleLike()">
+                    <i class="fas fa-heart"></i>
+                    <span id="like-count"></span>
+                </button>
+                <button class="share-btn" onclick="shareArticle()">
+                    <i class="fas fa-share"></i>
+                    <span></span>
+                </button>
+            </div>
+            
+            
+
+            <script>
+                let likeCount = 0;
+                let commentCount = 0;
+                const likeButton = document.querySelector('.like-btn');
+                const likeCountElement = document.getElementById('like-count');
+                const commentButton = document.querySelector('.comment-btn');
+                const commentSection = document.getElementById('comment-section');
+                const commentForm = document.getElementById('comment-form');
+                const commentInput = document.getElementById('comment-input');
+                const commentsList = document.getElementById('comments-list');
+                const commentCountElement = document.getElementById('comment-count');
+        
+                function toggleLike() {
+                    likeCount++;
+                    likeCountElement.textContent = `${likeCount} Likes`;
+                }
+        
+                function shareArticle() {
+                    // Implement sharing functionality (e.g., using Web Share API)
+                    if (navigator.share) {
+                        navigator.share({
+                            title: document.title,
+                            url: window.location.href
+                        }).catch(console.error);
+                    } else {
+                        alert('Sharing is not supported in this browser.');
+                    }
+                }
+        
+                function toggleCommentSection() {
+                    commentSection.classList.toggle('active');
+                }
+        
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const newComment = commentInput.value.trim();
+                    if (newComment) {
+                        const commentElement = document.createElement('div');
+                        commentElement.className = 'comment';
+                        commentElement.textContent = newComment;
+                        commentsList.appendChild(commentElement);
+                        commentInput.value = '';
+                        commentCount++;
+                        commentCountElement.textContent = `${commentCount} Comments`;
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        </footer>
+    </article>
+   
+    </article>
+</body>
+</html>

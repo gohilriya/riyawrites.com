@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title - Riya Writes</title>
+    <link rel="stylesheet" href="Read more3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <article>
+        <header>
+            <h2>Focus on who you are becoming in this process
+            </h2>
+            <p class="meta">Published on August 6, 2024</p>
+        </header>
+        <figure>
+            <img src="./images/blog3.png.png" alt="Article Image">
+            <figcaption> “Focus on you, until the focus is on you.”
+            </figcaption>
+        </figure>
+        <div class="article-content">
+            <p>When setting out to achieve big goals—like building a blog or launching a startup—the destination often takes center stage. But the real magic happens in who you become along the way.</p>
+            <p>“What you get by achieving your goals is not as important as what you become by achieving your goals.” — Henry David Thoreau</p>
+            <p>This quote captures the essence of the journey. The achievements are milestones, but the person you transform into, the skills you gain, and the wisdom you acquire are the true treasures.
+            </p>
+            <p>Embrace the journey as a continuous learning experience. As Gandhi said, “Live as if you were to die tomorrow. Learn as if you were to live forever.” Every challenge is an opportunity to gain new insights and grow.</p>
+            <p>Adaptability is crucial. Darwin’s insight that “It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change” is a powerful reminder to stay flexible and open to new possibilities.
+            </p>
+            <p>Resilience will shape your path. Mandela’s words, “Do not judge me by my successes, judge me by how many times I fell down and got back up again,” emphasize that overcoming setbacks is a testament to your strength and determination.</p>
+            <p>Find joy in your work. Albert Schweitzer’s belief that “Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful” highlights the importance of passion and enthusiasm in achieving success.</p>
+            <p>Build and nurture meaningful connections. Helen Keller’s perspective that “Alone, we can do so little; together, we can do so much” underscores the power of community and collaboration.</p>
+            <p>Let creativity drive you. As Einstein said, “Creativity is intelligence having fun.” Embrace innovation and let your unique ideas shine. </p>
+            <p>Maintain balance. Jim Rohn’s advice to “Take care of your body. It’s the only place you have to live” and Thích Nhất Hạnh’s reminder that “The present moment is the only time over which we have dominion” are crucial for sustaining your energy and focus.
+            </p>
+            <p>Reflect regularly. Socrates’ insight, “The unexamined life is not worth living,” encourages self-assessment and continuous improvement. And as Steve Jobs said, “The only way to do great work is to love what you do,” which reinforces the importance of a growth mindset and persistence.
+            </p>
+            <p>As you build your blog or startup, remember: It’s not just about reaching the end goal. It’s about who you are becoming along the way. Embrace the journey, learn from every step, and let each moment shape the person you are destined to be. The real success is in the transformation. Keep moving forward with passion, purpose, and a belief in your potential.
+
+            </p>
+        </div>
+        <footer>
+            <div class="social">
+                <button class="like-btn" onclick="toggleLike()">
+                    <i class="fas fa-heart"></i>
+                    <span id="like-count"></span>
+                </button>
+                <button class="share-btn" onclick="shareArticle()">
+                    <i class="fas fa-share"></i>
+                    <span></span>
+                </button>
+            </div>
+            
+            
+
+            <script>
+                let likeCount = 0;
+                let commentCount = 0;
+                const likeButton = document.querySelector('.like-btn');
+                const likeCountElement = document.getElementById('like-count');
+                const commentButton = document.querySelector('.comment-btn');
+                const commentSection = document.getElementById('comment-section');
+                const commentForm = document.getElementById('comment-form');
+                const commentInput = document.getElementById('comment-input');
+                const commentsList = document.getElementById('comments-list');
+                const commentCountElement = document.getElementById('comment-count');
+        
+                function toggleLike() {
+                    likeCount++;
+                    likeCountElement.textContent = `${likeCount} Likes`;
+                }
+        
+                function shareArticle() {
+                    // Implement sharing functionality (e.g., using Web Share API)
+                    if (navigator.share) {
+                        navigator.share({
+                            title: document.title,
+                            url: window.location.href
+                        }).catch(console.error);
+                    } else {
+                        alert('Sharing is not supported in this browser.');
+                    }
+                }
+        
+                function toggleCommentSection() {
+                    commentSection.classList.toggle('active');
+                }
+        
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const newComment = commentInput.value.trim();
+                    if (newComment) {
+                        const commentElement = document.createElement('div');
+                        commentElement.className = 'comment';
+                        commentElement.textContent = newComment;
+                        commentsList.appendChild(commentElement);
+                        commentInput.value = '';
+                        commentCount++;
+                        commentCountElement.textContent = `${commentCount} Comments`;
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        </footer>
+    </article>
+   
+    </article>
+</body>
+</html>
